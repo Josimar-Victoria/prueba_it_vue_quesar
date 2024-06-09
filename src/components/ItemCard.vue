@@ -30,29 +30,17 @@
           @click="openModal()"
           class="text-white rounded-full p-1 hover:bg-blue-900 bg-blue-500"
         >
-          <img src="/public/List.svg" alt="open modal" title="Open Modal" />
+          <!-- Abrir Modal (Chevron Down Icon) -->
+          <ChevronDownIcon class="w-7 h-7 text-white" title="Open Modal" />
         </button>
 
-        <button
-          @click="handleDelete(docUid, fixed)"
-          class="text-white rounded-full hover:bg-blue-900 bg-blue-500"
-        >
-          <img
-            src="/public/Bin bounce.svg"
-            alt="eliminar"
-            title="Eliminar Archive"
-          />
+        <button @click="handleDelete(docUid, fixed)" class="">
+          <TrashIcon class="w-7 h-7 text-red-500" />
         </button>
         <!-- Botón de Editar -->
-        <router-link
-          :to="`/form/${docUid}`"
-          class="text-white rounded-full p-1 hover:bg-blue-900 bg-blue-500"
-        >
-          <img
-            src="/public/Plus.svg"
-            alt="Editar archive"
-            title="Editar Archive"
-          />
+        <router-link :to="`/form/${docUid}`" class="">
+          <!-- Editar (Pencil Icon) -->
+          <PencilIcon class="w-7 h-7 text-blue-500" title="Edictar Archive" />
         </router-link>
 
         <button
@@ -63,11 +51,8 @@
               : 'text-white rounded-full hover:bg-blue-900 bg-blue-500'
           "
         >
-          <img
-            src="/public/Pin.svg"
-            alt="fixed archive"
-            title="Fijar Archive"
-          />
+          <!-- Fijar (Pin Icon) -->
+          <BookmarkIcon class="w-7 h-7 text-white" />
         </button>
       </div>
       <AlertModal
@@ -99,7 +84,12 @@ import { ref } from "vue";
 import { useFileStore } from "../stores/files";
 import AlertModal from "../components/AlertModal.vue";
 import ModalDetails from "./ModalDetails.vue";
-
+import {
+  TrashIcon,
+  PencilIcon,
+  BookmarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/vue/24/solid";
 const fileStore = useFileStore();
 const showAlert = ref(false); // Para controlar la visualización de la alerta
 const modalOpen = ref(false);
