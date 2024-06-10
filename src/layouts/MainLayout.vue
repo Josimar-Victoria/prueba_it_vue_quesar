@@ -68,13 +68,13 @@ const linksList = [
     title: "Home",
     caption: "Lista de Archivos",
     icon: "school",
-    link: "http://localhost:9000/#/",
+    link: "/",
   },
   {
     title: "create archive",
     caption: "Formulario Para Arear Archivos",
     icon: "code",
-    link: "http://localhost:9000/#/form",
+    link: "/#/form",
   },
 ];
 
